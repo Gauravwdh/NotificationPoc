@@ -72,7 +72,7 @@ public class Handler {
     }
 
     public void showCollapseEmoji() {
-        String title = "Sports Notification...";
+        String title = "Sports Notification which can extend upto 2 lines of text ";
         String content = getContent();
         RemoteViews remoteView = new RemoteViews(context.getPackageName(), R.layout.collapse_emoji_notification);
         RemoteViewUtil.setText(remoteView, R.id.title, title, 0);

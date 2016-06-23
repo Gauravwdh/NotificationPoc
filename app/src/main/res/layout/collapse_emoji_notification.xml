@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tool="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:background="@color/white"
-                android:orientation="vertical">
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <include layout="@layout/notification_icon"/>
+    <include layout="@layout/notification_icon" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,33 +20,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/emoji_icon_first"
-                style="@style/notification_emoji"
-                android:src="@drawable/ic_cab"
-                android:layout_alignParentLeft="true"
-                android:visibility="gone"/>
+            <LinearLayout
+                android:id="@+id/layout_title"
+                android:orientation="horizontal"
+                android:layout_toLeftOf="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/title"
-                style="@style/notification_title"
-                android:layout_toRightOf="@+id/emoji_icon_first"
-                tool:text="Title of the simple..."/>
+                <ImageView
+                    android:id="@+id/emoji_icon_first"
+                    style="@style/notification_emoji"
+                    android:src="@drawable/ic_cab"
+                    android:visibility="visible" />
 
-            <ImageView
-                android:id="@+id/emoji_icon_last"
-                style="@style/notification_emoji"
-                android:layout_toRightOf="@id/title"
-                android:src="@drawable/ic_cab"
-                android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/title"
+                    style="@style/notification_title"
+                    android:layout_marginLeft="3dp"
+                    tool:text="Title of the simple notification acan asdn asjdl " />
+
+                <ImageView
+                    android:id="@+id/emoji_icon_last"
+                    style="@style/notification_emoji"
+                    android:layout_marginLeft="3dp"
+                    android:src="@drawable/ic_cab"
+                    android:visibility="visible" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/time"
                 style="@style/notification_time"
-                android:layout_alignBottom="@id/title"
+                android:layout_alignBottom="@id/layout_title"
                 android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
                 android:layout_alignParentTop="true"
-                tool:text="9:00 pm "/>
+                tool:text="9:00 pm " />
 
         </RelativeLayout>
 
@@ -54,7 +62,7 @@
             android:id="@+id/content"
             style="@style/notification_content"
             android:layout_marginRight="8dp"
-            tool:text="content of notification can extend ashdo asdh iashd ias asdhiahsdi asduh"/>
+            tool:text="content of notification can extend ashdo asdh iashd ias asdhiahsdi asduh" />
 
 
     </LinearLayout>
