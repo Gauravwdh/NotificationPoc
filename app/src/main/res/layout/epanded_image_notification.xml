@@ -4,8 +4,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="256dp"
                 android:background="@color/white"
-                android:orientation="vertical"
-                android:paddingTop="10dp">
+                android:orientation="vertical">
 
     <include
         layout="@layout/notification_icon"/>
@@ -13,9 +12,10 @@
     <LinearLayout
         android:id="@+id/layout_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:layout_marginRight="8dp"
         android:layout_toRightOf="@+id/layout_image"
+        android:gravity="center_vertical"
         android:orientation="vertical">
 
         <RelativeLayout
