@@ -11,6 +11,6 @@
         android:layout_height="40dp"
         android:layout_gravity="center"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher"/>
+        android:src="@drawable/icon"/>
 
 </FrameLayout>

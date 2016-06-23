@@ -3,10 +3,10 @@
                 xmlns:tool="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
                 android:background="@color/white"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
 
     <include
         layout="@layout/notification_icon"/>
@@ -25,38 +25,25 @@
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/notification_title"
                 android:layout_alignParentLeft="true"
                 android:layout_toLeftOf="@+id/time"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textColor="@color/text_color"
-                android:textSize="16sp"
                 tool:text="Title of the simple"/>
 
             <TextView
                 android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/title"
+                style="@style/notification_time"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="2dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textColor="@color/gray_dark"
-                android:textSize="12sp"
+                android:layout_alignParentTop="true"
                 tool:text="9:00 pm "/>
 
         </RelativeLayout>
 
         <TextView
             android:id="@+id/content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/notification_content"
+            android:maxLines="5"
             android:layout_marginRight="8dp"
-            android:textColor="@color/gray_dark"
-            android:textSize="14sp"
             tool:text="content of notification can extend ashdo asdh iashd ias"/>
 
 

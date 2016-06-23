@@ -1,26 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="in.helpchat.voiceproject.MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/activity_main"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="20dp"
+              android:orientation="vertical"
+              tools:context="in.helpchat.voiceproject.MainActivity">
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="@+id/activity_main"
-        app:layout_constraintLeft_toLeftOf="@+id/activity_main"
-        app:layout_constraintRight_toRightOf="@+id/activity_main"
-        app:layout_constraintTop_toTopOf="@+id/activity_main" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn"
-        android:text="Click it!!!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/col_simple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Collapse Simple"
+            android:textAllCaps="false"/>
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/col_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Collapse Title"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/col_sub_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Collapse SubContent"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/col_emoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Collapse Emoji"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/col_native"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Collapse Native"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/expanded_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Expanded Text"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/expanded_text_cta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expanded text cta"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/expanded_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Expanded Image"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/expanded_sub_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expanded Sub content"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/none"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="None"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</LinearLayout>

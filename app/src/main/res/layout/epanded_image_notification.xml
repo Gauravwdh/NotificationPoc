@@ -2,16 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tool="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
+                android:layout_height="256dp"
                 android:background="@color/white"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingTop="10dp">
 
-    <include layout="@layout/notification_icon"/>
+    <include
+        layout="@layout/notification_icon"/>
 
     <LinearLayout
+        android:id="@+id/layout_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_marginRight="8dp"
         android:layout_toRightOf="@+id/layout_image"
         android:orientation="vertical">
@@ -25,7 +27,7 @@
                 style="@style/notification_title"
                 android:layout_alignParentLeft="true"
                 android:layout_toLeftOf="@+id/time"
-                tool:text="Title of the simple asdh asd iashd i asdias dhias dia"/>
+                tool:text="Title of the simple"/>
 
             <TextView
                 android:id="@+id/time"
@@ -33,22 +35,23 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 tool:text="9:00 pm "/>
+
         </RelativeLayout>
 
         <TextView
             android:id="@+id/content"
-            style="@style/notification_one_line_content"
+            style="@style/notification_content"
             android:layout_marginRight="8dp"
-            tool:text="content of notification can extend askd huahsd i saidh"/>
-
-        <TextView
-            android:id="@+id/sub_content"
-            style="@style/notification_sub_content"
-            android:layout_marginRight="8dp"
-            tool:text="content of notification can extend askd huahsd i saidh"/>
-
-
+            tool:text="content of notification can extend ashdo asdh iashd ias"/>
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_content"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/exit_dialog_banner"/>
 
 
 </RelativeLayout>

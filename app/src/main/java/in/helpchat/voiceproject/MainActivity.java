@@ -34,7 +34,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     // type of notification:
@@ -42,59 +42,26 @@ public class MainActivity extends AppCompatActivity {
     // 2. Expanded: Text, sub content, Image-text, Text-Cta, Image-cta
 
     private final int REQ_CODE_SPEECH_INPUT = 100;
-
-    private View btn;
-    private TextView textView;
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn = findViewById(R.id.btn);
-        textView = (TextView) findViewById(R.id.text);
-        final String title = "Horoscope - Leo some random text can also be added here as required";
-        final String content = "Some xyz content will go here al sdohas odas dhas di asd asdonsa d asd iashd ihais dh as i said i ";
-        final String subContent = "#21 likes and more";
+        handler = new Handler(this);
+        findViewById(R.id.col_simple).setOnClickListener(this);
+        findViewById(R.id.col_title).setOnClickListener(this);
+        findViewById(R.id.col_sub_content).setOnClickListener(this);
+        findViewById(R.id.col_emoji).setOnClickListener(this);
+        findViewById(R.id.col_native).setOnClickListener(this);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Context context = MainActivity.this;
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
-                builder.setAutoCancel(true)
-                        .setContentTitle(title)
-                        .setContentText(content)
-                        .setSmallIcon(R.drawable.ic_notification);
-
-                RemoteViews remoteView = new RemoteViews(context.getPackageName(), R.layout.collapse_subcontent_notification);
-                RemoteViewUtil.setImageBitmap(remoteView, R.id.icon, getNotificationImage());
-                RemoteViewUtil.setText(remoteView, R.id.title, title, 0);
-                RemoteViewUtil.setText(remoteView, R.id.content, content, 0);
-                RemoteViewUtil.setText(remoteView, R.id.sub_content, subContent, 0);
-                RemoteViewUtil.setText(remoteView, R.id.time, "10:31 pm", 0);
-
-                builder.setContent(remoteView);
-
-                remoteView = new RemoteViews(context.getPackageName(), R.layout.expanded_text_notification);
-                RemoteViewUtil.setImageBitmap(remoteView, R.id.icon, getNotificationImage());
-                RemoteViewUtil.setText(remoteView, R.id.title, title, 0);
-                RemoteViewUtil.setText(remoteView, R.id.content, content, 0);
-                RemoteViewUtil.setText(remoteView, R.id.time, "10:31 pm", 0);
+        findViewById(R.id.expanded_text).setOnClickListener(this);
+        findViewById(R.id.expanded_text_cta).setOnClickListener(this);
+        findViewById(R.id.expanded_image).setOnClickListener(this);
+        findViewById(R.id.expanded_sub_content).setOnClickListener(this);
+        findViewById(R.id.none).setOnClickListener(this);
 
 
-                Notification build = builder.build();
-                build.bigContentView = remoteView;
-                NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                manager.notify(1, build);
-
-                builder = new NotificationCompat.Builder(context);
-                builder.setAutoCancel(true)
-                        .setContentTitle(title)
-                        .setContentText(content)
-                        .setSmallIcon(R.drawable.ic_notification);
-                manager.notify(2, builder.build());
-            }
-        });
     }
 
 
@@ -127,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK && null != data) {
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    textView.setText(result.get(0));
+//                    textView.setText(result.get(0));
                 }
                 break;
             }
@@ -155,5 +122,41 @@ public class MainActivity extends AppCompatActivity {
         canvas.drawBitmap(overflowIconBmp, srcPoint, desPoint, null);
 
         return largeIcon;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.col_simple:
+                handler.showCollapseSimple();
+                break;
+            case R.id.col_title:
+                handler.showCollapseTitle();
+                break;
+            case R.id.col_sub_content:
+                handler.showCollapseSubContent();
+                break;
+            case R.id.col_emoji:
+//                handler.show
+                Toast.makeText(this, "No action", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.col_native:
+                handler.showCollapseNative();
+                break;
+
+            case R.id.expanded_text:
+                handler.showExpandedText();
+                break;
+            case R.id.expanded_text_cta:
+                handler.showExpandedTextCta();
+                break;
+            case R.id.expanded_image:
+                handler.showExpandedTextImage();
+                break;
+            case R.id.expanded_sub_content:
+                handler.showExpandedSubText();
+                break;
+//            findViewById(R.id.none).setOnClickListener(this);
+        }
     }
 }
