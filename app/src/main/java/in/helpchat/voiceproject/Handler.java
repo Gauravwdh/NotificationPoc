@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.support.v7.app.NotificationCompat;
+import android.view.View;
 import android.widget.RemoteViews;
 
 /**
@@ -68,6 +69,22 @@ public class Handler {
         NotificationCompat.Builder builder = getBuilder(title, content);
         builder.setContent(remoteView);
         manager.notify(3, builder.build());
+    }
+
+    public void showCollapseEmoji() {
+        String title = "Sports Notification...";
+        String content = getContent();
+        RemoteViews remoteView = new RemoteViews(context.getPackageName(), R.layout.collapse_emoji_notification);
+        RemoteViewUtil.setText(remoteView, R.id.title, title, 0);
+        RemoteViewUtil.setText(remoteView, R.id.content, content, 0);
+        RemoteViewUtil.setText(remoteView, R.id.time, "10:31 pm", 0);
+        RemoteViewUtil.setImageBitmap(remoteView,R.id.emoji_icon_first,BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_cab));
+        RemoteViewUtil.setImageBitmap(remoteView,R.id.emoji_icon_last,BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_cab));
+        RemoteViewUtil.setVisibility(remoteView,R.id.emoji_icon_first, View.VISIBLE);
+        RemoteViewUtil.setVisibility(remoteView,R.id.emoji_icon_last, View.VISIBLE);
+        NotificationCompat.Builder builder = getBuilder(title, content);
+        builder.setContent(remoteView);
+        manager.notify(10, builder.build());
     }
 
     public void showCollapseNative() {
