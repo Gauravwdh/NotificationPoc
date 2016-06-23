@@ -36,6 +36,11 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    // type of notification:
+    // 1. Collapse: simple, title, sub content, emoji
+    // 2. Expanded: Text, sub content, Image-text, Text-Cta, Image-cta
+
     private final int REQ_CODE_SPEECH_INPUT = 100;
 
     private View btn;
