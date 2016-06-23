@@ -137,8 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 handler.showCollapseSubContent();
                 break;
             case R.id.col_emoji:
-//                handler.show
-                Toast.makeText(this, "No action", Toast.LENGTH_LONG).show();
+                handler.showCollapseEmoji();
                 break;
             case R.id.col_native:
                 handler.showCollapseNative();

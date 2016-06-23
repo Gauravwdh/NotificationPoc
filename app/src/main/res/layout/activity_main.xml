@@ -46,7 +46,7 @@
             android:layout_marginLeft="30dp"
             android:text="Collapse Emoji"
             android:textAllCaps="false"
-            android:visibility="gone"/>
+            />
     </LinearLayout>
 
     <LinearLayout
