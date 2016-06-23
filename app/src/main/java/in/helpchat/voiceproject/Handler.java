@@ -31,7 +31,7 @@ public class Handler {
     }
 
     public String getContent() {
-        return "Some xyz content will go here al sdohas odas dhas di asd asdonsa d asd iashd ihais dh as i said i  badbh hbdhjbf dbhfhbfvd dbvdbd dbhd dbchudfdzb dhd dhibfbfzhvcdhbc iyduhvf";
+        return "Some xyz content will go here l sdohas odas dhas di asd asdonsa d asd iashd ihais dh as i said i  badbh hbdhjbf dbhfhbfvd dbvdbd dbhd dbchudfdzb dhd dhibfbfzhvcdhbc iyduhvf";
     }
 
     public void showCollapseSimple() {
